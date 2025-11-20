@@ -174,6 +174,15 @@ body {
     animation: pulse 1s infinite;
 }
 
+#ultimate-area {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -248,8 +257,8 @@ button:hover {
     #grid-container {
         padding: 10px;
         gap: 8px;
-        align-content: start;
-        flex-grow: 0;
+        align-content: center;
+        flex-grow: 1;
     }
 
     .hole {
@@ -271,6 +280,10 @@ button:hover {
         font-size: 1.2rem;
         transform: none;
         animation: pulse-mobile 1s infinite;
+    }
+
+    #ultimate-area {
+        padding: 6% 0;
     }
 
     @keyframes pulse-mobile {
