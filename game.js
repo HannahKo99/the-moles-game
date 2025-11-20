@@ -402,6 +402,7 @@ class Game {
     activateUltimate() {
         if (!this.isPlaying || this.round !== 3) return;
 
+        // Flash effect
         const flash = document.createElement('div');
         flash.style.position = 'fixed';
         flash.style.top = 0;
@@ -418,10 +419,24 @@ class Game {
             setTimeout(() => flash.remove(), 500);
         }, 100);
 
+        // Count and hit all active moles
         const activeMoles = document.querySelectorAll('.character.mole.up');
+        const moleCount = activeMoles.length;
+
+        // Calculate points (R3 multiplier is 2, and if in fever time x3)
+        let multiplier = 2; // R3 base multiplier
+        if (this.timeLeft <= 10) multiplier = 6; // 2 * 3 (fever)
+        const totalPoints = moleCount * multiplier;
+
+        // Trigger clicks
         activeMoles.forEach(mole => {
             mole.click();
         });
+
+        // Display total score earned
+        if (moleCount > 0) {
+            this.showFloatingText(this.gridContainer, `大招！+${totalPoints} 分！`, 'gold');
+        }
 
         this.ultimateBtn.disabled = true;
         this.ultimateBtn.style.opacity = 0.5;
