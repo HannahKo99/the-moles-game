@@ -424,7 +424,7 @@ class Game {
         const moleCount = activeMoles.length;
 
         // Calculate points (R3 multiplier is 2, and if in fever time x3)
-        let multiplier = 2; // R3 base multiplier
+        let multiplier = 4; // R3 base multiplier
         if (this.timeLeft <= 10) multiplier = 6; // 2 * 3 (fever)
         const totalPoints = moleCount * multiplier;
 

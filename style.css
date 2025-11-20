@@ -225,14 +225,14 @@ button:hover {
 }
 
 /* Mobile Optimization */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     body {
         overflow: hidden;
         background-color: #333;
     }
 
     #game-container {
-        width: 84%;
+        width: 80%;
         height: 90vh;
         margin: 5vh auto;
         max-width: none;
@@ -265,8 +265,7 @@ button:hover {
 
     #ultimate-btn {
         position: static;
-        margin-top: auto;
-        margin-bottom: 10px;
+        margin-bottom: 2%;
         width: 80%;
         padding: 10px;
         font-size: 1.2rem;
